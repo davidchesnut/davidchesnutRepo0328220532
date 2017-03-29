@@ -5,12 +5,12 @@ more text
 
 indent list
 1. level 1
-  - level 2
-  - level 2
+    - level 2
+    - level 2
 2. level 1
-  - level 2
-    - level 3
-    - level 3
+    - level 2
+        - level 3
+        - level 3
     
 
 When the validation process is complete, you will receive a message to let you know that either your app or add-in is approved, or you need to make changes and resubmit it. You can also follow these steps to check the approval status in the Seller Dashboard:
