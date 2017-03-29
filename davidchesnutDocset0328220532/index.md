@@ -28,7 +28,7 @@ When the validation process is complete, you will receive a message to let you k
     
     - If the status is **approved**, your app or add-in is approved to be listed in the appropriate marketplaces.
     
-    > NOTE After your app or add-in is approved in the Seller Dashboard, there might be a delay before it is published in a store. After approval, an app or add-in typically appears in the store within 24 hours. 
+    > After your app or add-in is approved in the Seller Dashboard, there might be a delay before it is published in a store. After approval, an app or add-in typically appears in the store within 24 hours. 
     
     - If the status is **changes requested**, your app or add-in needs changes in order to be approved. Choose the app or add-in, and then on the summary page, choose **View the add-in report** for details about the required changes.
     
