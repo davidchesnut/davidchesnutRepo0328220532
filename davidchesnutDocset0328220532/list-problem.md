@@ -1,6 +1,7 @@
 ---
  title: "How to: see a list"
 ...
+
 # list problem
 indent list showing where indented bullet lists become numbered when rendering to HTML.
 
