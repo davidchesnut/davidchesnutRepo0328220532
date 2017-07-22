@@ -2,16 +2,13 @@
 <table>
 <tbody>
 <tr class="odd">
-<td align="left">##  Code: All Code: Multiple Code: Visual Basic Code: C# Code: C++ Code: JavaScript 
+<td align="left">
 </td>
 </tr>
 </tbody>
 </table>
 
-Visual Basic  
-C\#  
-C++  
-JavaScript  
+
 
 <table>
 <tbody>
@@ -23,7 +20,7 @@ JavaScript
 </td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="#seeAlsoToggle">See also</a>  <span id="headfeedbackarea" class="feedbackhead"><a href="javascript:SubmitFeedback(&#39;docthis@Microsoft.com&#39;,&#39;&#39;,&#39;&#39;,&#39;&#39;,&#39;1.0.17194.930&#39;,&#39;%0\dThank%20you%20for%20your%20feedback.%20The%20developer%20writing%20teams%20use%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d&#39;,&#39;Customer%20feedback&#39;);">Send feedback</a></span></td>
+
 </tr>
 </tbody>
 </table>
@@ -53,7 +50,7 @@ JavaScript
 </tbody>
 </table>
 
-**Last modified:** March 09, 2015
+
 
 ***Applies to:** Office 2013 | Open XML*
 
@@ -63,14 +60,12 @@ Office to programmatically create a spreadsheet document.
 The following assembly directives are required to compile the code in
 this topic.
 
-<span codelanguage="CSharp"></span>
 C\# 
 
     using DocumentFormat.OpenXml;
     using DocumentFormat.OpenXml.Packaging;
     using DocumentFormat.OpenXml.Spreadsheet;
 
-<span codelanguage="VisualBasic"></span>
 Visual Basic 
 
     Imports DocumentFormat.OpenXml
@@ -128,13 +123,11 @@ templates and workbooks.
 The following code example calls the **Create**
 method.
 
-<span codelanguage="CSharp"></span>
 C\# 
 
     SpreadsheetDocument spreadsheetDocument = 
     SpreadsheetDocument.Create(filepath, SpreadsheetDocumentType.Workbook);
 
-<span codelanguage="VisualBasic"></span>
 Visual Basic 
 
     Dim spreadsheetDocument As SpreadsheetDocument = _
@@ -167,14 +160,12 @@ class="nolink">Sheets</span></span> class. The following code example
 creates a new worksheet, associates the worksheet, and appends the
 worksheet to the workbook.
 
-<span codelanguage="CSharp"></span>
 C\# 
 
     Sheet sheet = new Sheet() { Id = spreadsheetDocument.WorkbookPart.
     GetIdOfPart(worksheetPart), SheetId = 1, Name = "mySheet" };
     sheets.Append(sheet);
 
-<span codelanguage="VisualBasic"></span>
 Visual Basic 
 
     Dim sheet As New Sheet() With {.Id = spreadsheetDocument.WorkbookPart.GetIdOfPart(worksheetPart), .SheetId = 1, .Name = "mySheet"}
@@ -306,12 +297,10 @@ sheet named "mySheet". To call it in your program, you can use the
 following code example that creates a file named "Sheet2.xlsx" in the
 public documents folder.
 
-<span codelanguage="CSharp"></span>
 C\# 
 
     CreateSpreadsheetWorkbook(@"c:\Users\Public\Documents\Sheet2.xlsx")
 
-<span codelanguage="VisualBasic"></span>
 Visual Basic 
 
     CreateSpreadsheetWorkbook("c:\Users\Public\Documents\Sheet2.xlsx")
@@ -323,7 +312,6 @@ call to the **Create** method.
 
 Following is the complete sample code in both C\# and Visual Basic.
 
-<span codelanguage="CSharp"></span>
 C\# 
 
     public static void CreateSpreadsheetWorkbook(string filepath)
@@ -356,7 +344,6 @@ C\# 
         spreadsheetDocument.Close();
     }
 
-<span codelanguage="VisualBasic"></span>
 Visual Basic 
 
     Public Sub CreateSpreadsheetWorkbook(ByVal filepath As String)
