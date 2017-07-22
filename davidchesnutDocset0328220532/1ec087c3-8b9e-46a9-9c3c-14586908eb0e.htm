@@ -1,0 +1,625 @@
+![Collapse
+section](../icons/collapse_all.gif "Collapse section")![Expand
+section](../icons/expand_all.gif "Expand section")![](../icons/expand_all.gif)![](../icons/dropdown.gif)![](../icons/dropdownHover.gif)![Copy
+code](../icons/copycode.gif "Copy code")![Copy code
+hover](../icons/copycodeHighlight.gif "Copy code hover")
+<div id="header">
+
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  <span onclick="ExpandCollapseAll(toggleAllImage)" style="cursor:default;" onkeypress="ExpandCollapseAll_CheckKey(toggleAllImage, event)" tabindex="0"> Collapse allExpand all </span><span>    </span><span id="devlangsDropdown" class="filter" tabindex="0">![](../icons/dropdown.gif) Code: All Code: Multiple Code: Visual Basic Code: C\# Code: C++ Code: JavaScript </span>
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<div id="devlangsMenu">
+
+Visual Basic\
+C\#\
+C++\
+JavaScript\
+
+</div>
+
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  <span id="runningHeaderText"></span>
+  <span id="nsrTitle">Working with slide layouts (Open XML SDK)</span>
+  [See also](#seeAlsoToggle)  <span id="headfeedbackarea" class="feedbackhead">[Send feedback](javascript:SubmitFeedback('docthis@Microsoft.com','','','','1.0.17193.1600','%0\dThank%20you%20for%20your%20feedback.%20The%20developer%20writing%20teams%20use%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20feedback');)</span>
+  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+  ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<div id="allHistory" class="saveHistory" onsave="saveAll()"
+onload="loadAll()">
+
+</div>
+
+<div id="githubalert">
+
+<div class="alert">
+
++--------------------------------------+--------------------------------------+
+| ![](../icons/GitHub-Mark-64px.png)   | **Contribute to this article**       |
+|                                      |                                      |
+|                                      | You can edit, suggest, and submit    |
+|                                      | changes to [this                     |
+|                                      | content](https://github.com/OfficeDe |
+|                                      | v/office-content/tree/master/en-us/O |
+|                                      | penXMLCon/articles/1ec087c3-8b9e-46a |
+|                                      | 9-9c3c-14586908eb0e.md)              |
+|                                      | using GitHub.                        |
++--------------------------------------+--------------------------------------+
+
+</div>
+
+</div>
+
+<div class="introduction">
+
+**Last modified:** March 09, 2015
+
+***Applies to:** Office 2013 | Open XML*
+
+This topic discusses the Open XML SDK 2.5 for Office <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.SlideLayout"><span
+class="nolink">SlideLayout</span></span> class and how it relates to the
+Open XML File Format PresentationML schema.
+
+</div>
+
+<span onclick="ExpandCollapse(sectionToggle0)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle0, event)" tabindex="0">Slide Layouts in PresentationML</span> {.heading}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<div id="sectionSection0" class="section" name="collapseableSection"
+style="">
+
+The [ISO/IEC
+29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+specification describes the Open XML PresentationML \<sldLayout\>
+element used to represent slide layouts in a PresentationML document as
+follows:
+
+This element specifies an instance of a slide layout. The slide layout
+contains in essence a template slide design that can be applied to any
+existing slide. When applied to an existing slide all corresponding
+content should be mapped to the new slide layout.
+
+© ISO/IEC29500: 2008.
+
+The \<sldLayout\> element is the root element of the PresentationML
+Slide Layout part. For more information about the overall structure of
+the parts and elements that make up a PresentationML document, see
+[Structure of a PresentationML
+Document](fe780fcd-ed8f-4ee1-938e-cf3bb358ccae.htm).
+
+The following table lists the child elements of the \<sldLayout\>
+element used when working with slide layouts and the Open XML SDK 2.5
+classes that correspond to them.
+
+<div class="tableSection">
+
++--------------------------------------+--------------------------------------+
+| PresentationML Element               | Open XML SDK 2.5 Class               |
++======================================+======================================+
+| \<clrMapOvr\>                        | <span sdata="cer"                    |
+|                                      | target="T:DocumentFormat.OpenXml.Pre |
+|                                      | sentation.ColorMapOverride"><span    |
+|                                      | class="nolink">ColorMapOverride</spa |
+|                                      | n></span>                            |
++--------------------------------------+--------------------------------------+
+| \<cSld\>                             | <span sdata="cer"                    |
+|                                      | target="T:DocumentFormat.OpenXml.Pre |
+|                                      | sentation.CommonSlideData"><span     |
+|                                      | class="nolink">CommonSlideData</span |
+|                                      | ></span>                             |
++--------------------------------------+--------------------------------------+
+| \<extLst\>                           | <span sdata="cer"                    |
+|                                      | target="T:DocumentFormat.OpenXml.Pre |
+|                                      | sentation.ExtensionListWithModificat |
+|                                      | ion"><span                           |
+|                                      | class="nolink">ExtensionListWithModi |
+|                                      | fication</span></span>               |
++--------------------------------------+--------------------------------------+
+| \<hf\>                               | <span sdata="cer"                    |
+|                                      | target="T:DocumentFormat.OpenXml.Pre |
+|                                      | sentation.HeaderFooter"><span        |
+|                                      | class="nolink">HeaderFooter</span></ |
+|                                      | span>                                |
++--------------------------------------+--------------------------------------+
+| \<timing\>                           | <span sdata="cer"                    |
+|                                      | target="T:DocumentFormat.OpenXml.Pre |
+|                                      | sentation.Timing"><span              |
+|                                      | class="nolink">Timing</span></span>  |
++--------------------------------------+--------------------------------------+
+| \<transition\>                       | <span sdata="cer"                    |
+|                                      | target="T:DocumentFormat.OpenXml.Pre |
+|                                      | sentation.Transition"><span          |
+|                                      | class="nolink">Transition</span></sp |
+|                                      | an>                                  |
++--------------------------------------+--------------------------------------+
+
+</div>
+
+The following table from the [ISO/IEC
+29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+specification describes the attributes of the \<sldLayout\> element.
+
+<div class="tableSection">
+
++--------------------------------------+--------------------------------------+
+| Attributes                           | Description                          |
++======================================+======================================+
+| matchingName (Matching Name)         | Specifies a name to be used in place |
+|                                      | of the name attribute within the     |
+|                                      | cSld element. This is used for       |
+|                                      | layout matching in response to       |
+|                                      | layout changes and template          |
+|                                      | applications.                        |
+|                                      |                                      |
+|                                      | The possible values for this         |
+|                                      | attribute are defined by the W3C XML |
+|                                      | Schema <span                         |
+|                                      | class="keyword">string</span>        |
+|                                      | datatype.                            |
++--------------------------------------+--------------------------------------+
+| preserve (Preserve Slide Layout)     | Specifies whether the corresponding  |
+|                                      | slide layout is deleted when all the |
+|                                      | slides that follow that layout are   |
+|                                      | deleted. If this attribute is not    |
+|                                      | specified then a value of <span      |
+|                                      | class="keyword">false</span> should  |
+|                                      | be assumed by the generating         |
+|                                      | application. This would mean that    |
+|                                      | the slide would in fact be deleted   |
+|                                      | if no slides within the presentation |
+|                                      | were related to it.                  |
+|                                      |                                      |
+|                                      | The possible values for this         |
+|                                      | attribute are defined by the W3C XML |
+|                                      | Schema <span                         |
+|                                      | class="keyword">boolean</span>       |
+|                                      | datatype.                            |
++--------------------------------------+--------------------------------------+
+| showMasterPhAnim (Show Master        | Specifies whether or not to display  |
+| Placeholder Animations)              | animations on placeholders from the  |
+|                                      | master slide.                        |
+|                                      |                                      |
+|                                      | The possible values for this         |
+|                                      | attribute are defined by the W3C XML |
+|                                      | Schema **boolean** datatype.         |
++--------------------------------------+--------------------------------------+
+| showMasterSp (Show Master Shapes)    | Specifies if shapes on the master    |
+|                                      | slide should be shown on slides or   |
+|                                      | not.                                 |
+|                                      |                                      |
+|                                      | The possible values for this         |
+|                                      | attribute are defined by the W3C XML |
+|                                      | Schema <span                         |
+|                                      | class="keyword">boolean</span>       |
+|                                      | datatype.                            |
++--------------------------------------+--------------------------------------+
+| type (Slide Layout Type)             | Specifies the slide layout type that |
+|                                      | is used by this slide.               |
+|                                      |                                      |
+|                                      | The possible values for this         |
+|                                      | attribute are defined by the         |
+|                                      | ST\_SlideLayoutType simple type      |
+|                                      | (§19.7.15).                          |
++--------------------------------------+--------------------------------------+
+| userDrawn (Is User Drawn)            | Specifies if the corresponding       |
+|                                      | object has been drawn by the user    |
+|                                      | and should thus not be deleted. This |
+|                                      | allows for the flagging of slides    |
+|                                      | that contain user drawn data.        |
+|                                      |                                      |
+|                                      | The possible values for this         |
+|                                      | attribute are defined by the W3C XML |
+|                                      | Schema <span                         |
+|                                      | class="keyword">boolean</span>       |
+|                                      | datatype.                            |
++--------------------------------------+--------------------------------------+
+
+</div>
+
+© ISO/IEC29500: 2008.
+
+</div>
+
+<span onclick="ExpandCollapse(sectionToggle1)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle1, event)" tabindex="0">The Open XML SDK 2.5 SlideLayout Class</span> {.heading}
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<div id="sectionSection1" class="section" name="collapseableSection"
+style="">
+
+The OXML SDK <span class="keyword">SlideLayout</span> class represents
+the \<sldLayout\> element defined in the Open XML File Format schema for
+PresentationML documents. Use the <span
+class="keyword">SlideLayout</span> class to manipulate individual
+\<sldLayout\> elements in a PresentationML document.
+
+Classes that represent child elements of the \<sldLayout\> element and
+that are therefore commonly associated with the <span
+class="keyword">SlideLayout</span> class are shown in the following
+list.
+
+### ColorMapOverride Class {.subHeading}
+
+<div class="subsection">
+
+The <span class="keyword">ColorMapOverride</span> class corresponds to
+the \<clrMapOvr\> element. The following information from the [ISO/IEC
+29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+specification introduces the \<clrMapOvr\> element:
+
+This element provides a mechanism with which to override the color
+schemes listed within the \<ClrMap\> element. If the
+\<masterClrMapping\> child element is present, the color scheme defined
+by the master is used. If the \<overrideClrMapping\> child element is
+present, it defines a new color scheme specific to the parent notes
+slide, presentation slide, or slide layout.
+
+© ISO/IEC29500: 2008.
+
+</div>
+
+### CommonSlideData Class {.subHeading}
+
+<div class="subsection">
+
+The <span class="keyword">CommonSlideData</span> class corresponds to
+the \<cSld\> element. The following information from the [ISO/IEC
+29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+specification introduces the \<cSld\> element:
+
+This element specifies a container for the type of slide information
+that is relevant to all of the slide types. All slides share a common
+set of properties that is independent of the slide type; the description
+of these properties for any particular slide is stored within the
+slide's \<cSld\> container. Slide data specific to the slide type
+indicated by the parent element is stored elsewhere.
+
+The actual data in \<cSld\> describe only the particular parent slide;
+it is only the type of information stored that is common across all
+slides.
+
+© ISO/IEC29500: 2008.
+
+</div>
+
+### ExtensionListWithModification Class {.subHeading}
+
+<div class="subsection">
+
+The <span class="keyword">ExtensionListWithModification</span> class
+corresponds to the \<extLst\>element. The following information from the
+[ISO/IEC
+29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+specification introduces the \<extLst\> element:
+
+This element specifies the extension list with modification ability
+within which all future extensions of element type \<ext\> are defined.
+The extension list along with corresponding future extensions is used to
+extend the storage capabilities of the PresentationML framework. This
+allows for various new kinds of data to be stored natively within the
+framework.
+
+[Note: Using this extLst element allows the generating application to
+store whether this extension property has been modified. end note]
+
+© ISO/IEC29500: 2008.
+
+</div>
+
+### HeaderFooter Class {.subHeading}
+
+<div class="subsection">
+
+The <span class="keyword">HeaderFooter</span> class corresponds to the
+\<hf\> element. The following information from the [ISO/IEC
+29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+specification introduces the \<hf\> element:
+
+This element specifies the header and footer information for a slide.
+Headers and footers consist of placeholders for text that should be
+consistent across all slides and slide types, such as a date and time,
+slide numbering, and custom header and footer text.
+
+© ISO/IEC29500: 2008.
+
+</div>
+
+### Timing Class {.subHeading}
+
+<div class="subsection">
+
+The <span class="keyword">Timing</span> class corresponds to the
+\<timing\> element. The following information from the [ISO/IEC
+29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+specification introduces the \<timing\> element:
+
+This element specifies the timing information for handling all
+animations and timed events within the corresponding slide. This
+information is tracked via time nodes within the \<timing\> element.
+More information on the specifics of these time nodes and how they are
+to be defined can be found within the Animation section of the
+PresentationML framework.
+
+© ISO/IEC29500: 2008.
+
+</div>
+
+### Transition Class {.subHeading}
+
+<div class="subsection">
+
+The <span class="keyword">Transition</span> class corresponds to the
+\<transition\> element. The following information from the [ISO/IEC
+29500](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=51463)
+specification introduces the \<transition\> element:
+
+This element specifies the kind of slide transition that should be used
+to transition to the current slide from the previous slide. That is, the
+transition information is stored on the slide that appears after the
+transition is complete.
+
+© ISO/IEC29500: 2008.
+
+</div>
+
+</div>
+
+<span onclick="ExpandCollapse(sectionToggle2)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle2, event)" tabindex="0">Working with the SlideLayout Class</span> {.heading}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<div id="sectionSection2" class="section" name="collapseableSection"
+style="">
+
+As shown in the Open XML SDK code sample that follows, every instance of
+the <span class="keyword">SlideLayout</span> class is associated with an
+instance of the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Packaging.SlideLayoutPart"><span
+class="nolink">SlideLayoutPart</span></span> class, which represents a
+slide layout part, one of the required parts of a PresentationML
+presentation file package. Each <span class="keyword">SlideLayout</span>
+class instance must also be associated with instances of the <span
+sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.SlideMaster"><span
+class="nolink">SlideMaster</span></span> and <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.Slide"><span
+class="nolink">Slide</span></span> classes, which are in turn associated
+with similarly named required presentation parts, represented by the
+<span sdata="cer"
+target="T:DocumentFormat.OpenXml.Packaging.SlideMasterPart"><span
+class="nolink">SlideMasterPart</span></span> and <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Packaging.SlidePart"><span
+class="nolink">SlidePart</span></span>classes.
+
+The <span class="keyword">SlideLayout</span> class, which represents the
+\<sldLayout\> element, is therefore also associated with a series of
+other classes that represent the child elements of the \<sldLayout\>
+element. Among these classes, as shown in the following code sample, are
+the <span class="keyword">CommonSlideData</span> class, the <span
+class="keyword">ColorMapOverride</span> class, the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.ShapeTree"><span
+class="nolink">ShapeTree</span></span> class, and the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.Shape"><span
+class="nolink">Shape</span></span> class.
+
+</div>
+
+<span onclick="ExpandCollapse(sectionToggle3)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle3, event)" tabindex="0">Open XML SDK Code Example</span> {.heading}
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<div id="sectionSection3" class="section" name="collapseableSection"
+style="">
+
+The following method from the article <span sdata="link">[How to: Create
+a presentation document by providing a file name (Open XML
+SDK)](3d4a800e-64f0-4715-919f-a8f7d92a5c37.htm)</span> adds a new slide
+layout part to an existing presentation and creates an instance of an
+Open XML SDK 2.5<span class="keyword">SlideLayout</span> class in the
+new slide layout part. The <span class="keyword">SlideLayout</span>
+class constructor creates instances of the <span
+class="keyword">CommonSlideData</span> class and the <span
+class="keyword">ColorMapOverride</span> class. The <span
+class="keyword">CommonSlideData</span> class constructor creates an
+instance of the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.ShapeTree"><span
+class="nolink">ShapeTree</span></span> class, whose constructor in turn
+creates additional class instances: an instance of the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.NonVisualGroupShapeProperties"><span
+class="nolink">NonVisualGroupShapeProperties</span></span> class, an
+instance of the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.GroupShapeProperties"><span
+class="nolink">GroupShapeProperties</span></span> class, and an instance
+of the <span sdata="cer"
+target="T:DocumentFormat.OpenXml.Presentation.Shape"><span
+class="nolink">Shape</span></span> class.
+
+The namespace represented by the letter *P* in the code is the <span
+sdata="cer" target="N:DocumentFormat.OpenXml.Presentation"><span
+class="nolink">DocumentFormat.OpenXml.Presentation</span></span>
+namespace.
+
+<div class="code">
+
+<span codelanguage="CSharp"></span>
+C\# 
+<span class="copyCode" onclick="CopyCode(this)"
+onkeypress="CopyCode_CheckKey(this, event)"
+onmouseover="ChangeCopyCodeIcon(this)"
+onmouseout="ChangeCopyCodeIcon(this)" tabindex="0">![Copy
+code](../icons/copycode.gif "Copy code")Copy code</span>
+    private static SlideLayoutPart CreateSlideLayoutPart(SlidePart slidePart1)
+            {
+                SlideLayoutPart slideLayoutPart1 = slidePart1.AddNewPart<SlideLayoutPart>("rId1");
+                SlideLayout slideLayout = new SlideLayout(
+                new CommonSlideData(new ShapeTree(
+                  new P.NonVisualGroupShapeProperties(
+                  new P.NonVisualDrawingProperties() { Id = (UInt32Value)1U, Name = "" },
+                  new P.NonVisualGroupShapeDrawingProperties(),
+                  new ApplicationNonVisualDrawingProperties()),
+                  new GroupShapeProperties(new TransformGroup()),
+                  new P.Shape(
+                  new P.NonVisualShapeProperties(
+                    new P.NonVisualDrawingProperties() { Id = (UInt32Value)2U, Name = "" },
+                    new P.NonVisualShapeDrawingProperties(new ShapeLocks() { NoGrouping = true }),
+                    new ApplicationNonVisualDrawingProperties(new PlaceholderShape())),
+                  new P.ShapeProperties(),
+                  new P.TextBody(
+                    new BodyProperties(),
+                    new ListStyle(),
+                    new Paragraph(new EndParagraphRunProperties()))))),
+                new ColorMapOverride(new MasterColorMapping()));
+                slideLayoutPart1.SlideLayout = slideLayout;
+                return slideLayoutPart1;
+             }
+
+</div>
+
+<div class="code">
+
+<span codelanguage="VisualBasic"></span>
+Visual Basic 
+<span class="copyCode" onclick="CopyCode(this)"
+onkeypress="CopyCode_CheckKey(this, event)"
+onmouseover="ChangeCopyCodeIcon(this)"
+onmouseout="ChangeCopyCodeIcon(this)" tabindex="0">![Copy
+code](../icons/copycode.gif "Copy code")Copy code</span>
+    Private Shared Function CreateSlideLayoutPart(ByVal slidePart1 As SlidePart) As SlideLayoutPart
+                Dim slideLayoutPart1 As SlideLayoutPart = slidePart1.AddNewPart(Of SlideLayoutPart)("rId1")
+                Dim slideLayout As New SlideLayout(New CommonSlideData(New ShapeTree(New P.NonVisualGroupShapeProperties(New P.NonVisualDrawingProperties() With { _
+                  .Id = CType(1UI, UInt32Value), _
+                  .Name = "" _
+                }, New P.NonVisualGroupShapeDrawingProperties(), New ApplicationNonVisualDrawingProperties()), _
+                    New GroupShapeProperties(New TransformGroup()), New P.Shape(New P.NonVisualShapeProperties(New P.NonVisualDrawingProperties() With { _
+                  .Id = CType(2UI, UInt32Value), _
+                  .Name = "" _
+                }, New P.NonVisualShapeDrawingProperties(New ShapeLocks() With { _
+                  .NoGrouping = True _
+                }), New ApplicationNonVisualDrawingProperties(New PlaceholderShape())), New P.ShapeProperties(), New P.TextBody(New BodyProperties(), _
+                    New ListStyle(), New Paragraph(New EndParagraphRunProperties()))))), New ColorMapOverride(New MasterColorMapping()))
+                slideLayoutPart1.SlideLayout = slideLayout
+                Return slideLayoutPart1
+            End Function
+
+</div>
+
+</div>
+
+<span onclick="ExpandCollapse(sectionToggle4)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(sectionToggle4, event)" tabindex="0">Generated PresentationML</span> {.heading}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<div id="sectionSection4" class="section" name="collapseableSection"
+style="">
+
+When the Open XML SDK code is run, the following XML is written to the
+PresentationML document file referenced in the code.
+
+<div class="code">
+
+<span codelanguage="xmlLang"></span>
+XML 
+<span class="copyCode" onclick="CopyCode(this)"
+onkeypress="CopyCode_CheckKey(this, event)"
+onmouseover="ChangeCopyCodeIcon(this)"
+onmouseout="ChangeCopyCodeIcon(this)" tabindex="0">![Copy
+code](../icons/copycode.gif "Copy code")Copy code</span>
+    <?xml version="1.0" encoding="utf-8"?>
+    <p:sldLayout xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main">
+      <p:cSld>
+        <p:spTree>
+          <p:nvGrpSpPr>
+            <p:cNvPr id="1"
+                     name="" />
+            <p:cNvGrpSpPr />
+            <p:nvPr />
+          </p:nvGrpSpPr>
+          <p:grpSpPr>
+            <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+          </p:grpSpPr>
+          <p:sp>
+            <p:nvSpPr>
+              <p:cNvPr id="2"
+                       name="" />
+              <p:cNvSpPr>
+                <a:spLocks noGrp="1"
+                           xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              </p:cNvSpPr>
+              <p:nvPr>
+                <p:ph />
+              </p:nvPr>
+            </p:nvSpPr>
+            <p:spPr />
+            <p:txBody>
+              <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+              <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+                <a:endParaRPr />
+              </a:p>
+            </p:txBody>
+          </p:sp>
+        </p:spTree>
+      </p:cSld>
+      <p:clrMapOvr>
+        <a:masterClrMapping xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+      </p:clrMapOvr>
+    </p:sldLayout>
+
+</div>
+
+</div>
+
+<span onclick="ExpandCollapse(seeAlsoToggle)" style="cursor:default;" onkeypress="ExpandCollapse_CheckKey(seeAlsoToggle, event)" tabindex="0">See also</span> {.heading}
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<div id="seeAlsoSection" class="section" name="collapseableSection"
+style="">
+
+#### Concepts {.subHeading}
+
+<div class="seeAlsoStyle">
+
+<span sdata="link">[About the Open XML SDK 2.5 for
+Office](620e86b5-49f2-43dc-85d4-9c7456c09552.htm)</span>
+
+</div>
+
+<div class="seeAlsoStyle">
+
+[How to: Create a Presentation by Providing a File
+Name](3d4a800e-64f0-4715-919f-a8f7d92a5c37.htm)
+
+</div>
+
+<div class="seeAlsoStyle">
+
+<span sdata="link">[How to: Apply a theme to a presentation (Open XML
+SDK)](d7575014-8187-4e55-bafa-15bc317bf8c8.htm)</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="footer">
+
+<div class="footerLine">
+
+![Footer](../icons/footer.gif "Footer")
+
+</div>
+
+<span id="feedbackarea"> Suggest or [request more documentation (or
+report an
+error)](javascript:SubmitFeedback('docthis@Microsoft.com','','','','1.0.17193.1600','%0\dThank%20you%20for%20your%20feedback.%20The%20developer%20writing%20teams%20use%20your%20feedback%20to%20improve%20documentation.%20While%20we%20are%20reviewing%20your%20feedback,%20we%20may%20send%20you%20e-mail%20to%20ask%20for%20clarification%20or%20feedback%20on%20a%20solution.%20We%20do%20not%20use%20your%20e-mail%20address%20for%20any%20other%20purpose%20and%20we%20delete%20it%20after%20we%20finish%20our%20review.%0\AFor%20further%20information%20about%20the%20privacy%20policies%20of%20Microsoft,%20please%20see%20http://privacy.microsoft.com/en-us/default.aspx.%0\A%0\d','Customer%20feedback');)
+on this topic. </span>
+
+</div>
+
+</div>
