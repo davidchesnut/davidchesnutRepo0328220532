@@ -1,56 +1,5 @@
 
-<table>
-<tbody>
-<tr class="odd">
-<td align="left">
-</td>
-</tr>
-</tbody>
-</table>
-
-
-
-<table>
-<tbody>
-<tr class="odd">
-<td align="left"><span id="runningHeaderText"></span></td>
-</tr>
-<tr class="even">
-<td align="left"># How to: Create a spreadsheet document by providing a file name (Open XML SDK)
-</td>
-</tr>
-<tr class="odd">
-
-</tr>
-</tbody>
-</table>
-
-<table>
-<colgroup>
-<col width="100%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
-
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><img src="../icons/GitHub-Mark-64px.png" /></td>
-<td align="left"><p><strong>Contribute to this article</strong></p>
-<p>You can edit, suggest, and submit changes to <a href="https://github.com/OfficeDev/office-content/tree/master/en-us/OpenXMLCon/articles/03ac59c4-49a6-4721-8931-d045c4c9ddde.md">this content</a> using GitHub.</p></td>
-</tr>
-</tbody>
-</table>
-
-
+# How to: Create a spreadsheet document by providing a file name (Open XML SDK)
 
 ***Applies to:** Office 2013 | Open XML*
 
