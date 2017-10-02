@@ -11,3 +11,7 @@ You will learn the following:
 - How REST uses HTTP verbs
 - Request/response actions
 - HTTP status codes from REST
+
+## See also
+
+- Training modules
